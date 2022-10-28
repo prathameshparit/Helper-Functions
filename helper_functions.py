@@ -323,7 +323,5 @@ def compare_baseline_to_new_results(baseline_results, new_model_results):
   for key, value in baseline_results.items():
     print(f"Baseline {key}: {value:.2f}, New {key}: {new_model_results[key]:.2f}, Difference: {new_model_results[key]-value:.2f}")
 
-compare_baseline_to_new_results(baseline_results=baseline_results, 
-                                new_model_results=model_1_results)
 
 #--------------------------------------------------------------------------------------------------
