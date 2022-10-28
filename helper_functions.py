@@ -27,6 +27,9 @@ def load_and_prep_image(filename, img_shape=224, scale=True):
   else:
     return img
 
+  
+#--------------------------------------------------------------------------------------------------
+
 # Note: The following confusion matrix code is a remix of Scikit-Learn's 
 # plot_confusion_matrix function - https://scikit-learn.org/stable/modules/generated/sklearn.metrics.plot_confusion_matrix.html
 import itertools
@@ -109,6 +112,11 @@ def make_confusion_matrix(y_true, y_pred, classes=None, figsize=(10, 10), text_s
   if savefig:
     fig.savefig("confusion_matrix.png")
   
+  
+  
+#--------------------------------------------------------------------------------------------------
+
+
 # Make a function to predict on images and plot them (works with multi-class)
 def pred_and_plot(model, filename, class_names):
   """
@@ -132,6 +140,9 @@ def pred_and_plot(model, filename, class_names):
   plt.title(f"Prediction: {pred_class}")
   plt.axis(False);
   
+  
+#--------------------------------------------------------------------------------------------------
+
 import datetime
 
 def create_tensorboard_callback(dir_name, experiment_name):
@@ -151,6 +162,10 @@ def create_tensorboard_callback(dir_name, experiment_name):
   )
   print(f"Saving TensorBoard log files to: {log_dir}")
   return tensorboard_callback
+
+
+#--------------------------------------------------------------------------------------------------
+
 
 # Plot the validation and training data separately
 import matplotlib.pyplot as plt
@@ -184,6 +199,10 @@ def plot_loss_curves(history):
   plt.title('Accuracy')
   plt.xlabel('Epochs')
   plt.legend();
+
+  
+#--------------------------------------------------------------------------------------------------
+
 
 def compare_historys(original_history, new_history, initial_epochs=5):
     """
@@ -229,6 +248,9 @@ def compare_historys(original_history, new_history, initial_epochs=5):
     plt.xlabel('epoch')
     plt.show()
   
+
+#--------------------------------------------------------------------------------------------------
+
 # Create function to unzip a zipfile into current working directory 
 # (since we're going to be downloading and unzipping a few files)
 import zipfile
@@ -243,6 +265,10 @@ def unzip_data(filename):
   zip_ref = zipfile.ZipFile(filename, "r")
   zip_ref.extractall()
   zip_ref.close()
+
+
+#--------------------------------------------------------------------------------------------------
+
 
 # Walk through an image classification directory and find out how many files (images)
 # are in each subdirectory.
